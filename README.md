@@ -1,4 +1,3 @@
-```markdown
 # S24_The_World
 
 ## Group Members:
@@ -11,4 +10,3 @@
 
 ### Joe Wang (wangy78)
 - Role: Focused on the AI part, using CNN and other classifiers to determine if the object matches what it claims to be and also determine the quality of the picture.
-```
