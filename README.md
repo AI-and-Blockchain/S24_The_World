@@ -27,7 +27,7 @@ Prepare a dataset comprising images paired with clear descriptions or labels. Pr
 For classification tasks, start with logistic regression or decision trees for simplicity. Transition to KNN for more complexity. For advanced tasks, utilize PyTorch to implement a neural network with CNN layers for image classification. Split data into train, validation, and test sets. Employ cross-entropy loss and Adam optimizer for training. Evaluate models individually and ensemble results using techniques like voting or averaging. Assess performance using metrics like accuracy, precision, recall, and F1-score. Mainly using scikit-learn and PyTorch libraries for implementation.
 
 ## Architecture / High-level component diagram
-![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/architecture_component.pdf)
+![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/architecture_component.png)
 
 ## Sequence Diagram
 ![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/sequence_diagram.png)
