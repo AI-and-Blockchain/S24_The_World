@@ -30,4 +30,4 @@ For classification tasks, start with logistic regression or decision trees for s
 ![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/architecture_component.pdf)
 
 ## Sequence Diagram
-![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/sequence_diagram.pdf)
+![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/sequence_diagram.png)
