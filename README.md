@@ -31,3 +31,20 @@ For classification tasks, start with logistic regression or decision trees for s
 
 ## Sequence Diagram
 ![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/sequence_diagram.png)
+
+```mermaid
+sequenceDiagram
+    participant Seller
+    participant Platform website for seller
+    participant ML model
+    participant Platform smart contract
+    participant Platform website for buyer
+    participant Buyer
+    Seller->>Platform website for seller: Upload photo
+    Platform website for seller->>ML model: Extract features
+    Seller->>Platform smart contract: Set price
+    Platform smart contract->>Seller: Give a little reward
+    Platform smart contract->>Platform website for buyer: Display photo
+    Buyer->>Platform website for buyer: Buy photo
+    Buyer->>Platform smart contract: Sent token
+```
