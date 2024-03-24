@@ -32,7 +32,7 @@ For classification tasks, start with logistic regression or decision trees for s
 ## Sequence Diagram
 ![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/sequence_diagram.png)
 
-```mermaid
+<!-- ```mermaid
 sequenceDiagram
     participant Seller
     participant Platform website for seller
@@ -47,4 +47,4 @@ sequenceDiagram
     Platform smart contract->>Platform website for buyer: Display photo
     Buyer->>Platform website for buyer: Buy photo
     Buyer->>Platform smart contract: Sent token
-```
+``` -->
