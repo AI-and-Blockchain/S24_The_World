@@ -1,4 +1,4 @@
-### Machine learning model
+# Machine learning model
 - **Preparing data**:
 Prepare a dataset comprising images paired with clear descriptions or labels. Preprocess the images for algorithm input by resizing, normalization, and applying data augmentation for enhanced diversity. Extract pertinent features from both images and descriptions: leverage Convolutional Neural Networks (CNNs) to extract high-level image features, while employing natural language processing (NLP) techniques to extract textual features.
 - **Implementation**:
