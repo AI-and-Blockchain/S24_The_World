@@ -1,8 +1,8 @@
-# S24_The_World
+# S24_The_World_NFT
 
-## What is The World
+## What is The World NFT
 
-The World," aims to provide everyone with the opportunity to become a photographer and allow users worldwide to explore, purchase and use their favorite images. At the core of the platform is the use of advanced artificial intelligence technology, as well as blockchain-based smart contracts and predictive machine technology, to ensure that interactions and value exchanges between photographers and buyers are both efficient and secure. More than a simple online photo marketplace, the project represents a new, decentralized art exchange and business model
+The World, aims to provide everyone with the opportunity to become a photographer and allow users worldwide to explore, purchase and use their favorite image as a NFT to own it. At the core of the platform is the use of advanced artificial intelligence technology, as well as blockchain-based smart contracts, to ensure that interactions and value exchanges between photographers and buyers are both efficient and secure. More than a simple online photo marketplace, the project represents a new, decentralized art exchange and business model
 
 ## Group Members:
 
