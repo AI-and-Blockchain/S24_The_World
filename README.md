@@ -5,9 +5,9 @@
 The World NFT, aims to provide everyone with the opportunity to become a photographer and allow users worldwide to explore, purchase and use their favorite image as a NFT to own it. At the core of the platform is the use of advanced artificial intelligence technology, as well as blockchain-based smart contracts, to ensure that interactions and value exchanges between photographers and buyers are both efficient and secure. More than a simple online photo marketplace, the project represents a new, decentralized art exchange and business model.
 
 If you are willing to upload your photography work, you will receive a modest token of appreciation as a reward. We believe that heartfelt photographic works will surely be discovered by those who love the world! We encourage everyone to join our community!
-
+## Why we need The World NFT
+The World is here because every photoshot has a story eager for an audience. We want to give every aspiring photographer a chance to shine and every art lover a place to find that perfect image that speaks to them. By turning photos into NFTs, we're not just trading pictures; we're sharing pieces of the world. And with every photo uploaded, a token of thanks is given, encouraging more stories to be told. This is about making sure no view of the world goes unseen, and every creator feels valued. Let's make the art of photography accessible to all and celebrate the world through our lenses. Join in and let's create a gallery without walls together!
 ## Group Members:
-
 ### Kaiyang Chang (2281469043)
 - Role: Write smart contracts primarily designed for facilitating transactions between buyers and photographers for the purchase of photographs, and capable of connecting with an oracle to transmit the photographs to an AI model.
 
