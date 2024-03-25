@@ -14,7 +14,10 @@ The World," aims to provide everyone with the opportunity to become a photograph
 
 ### Joe Wang (wangy78)
 - Role: Focused on the AI part, using CNN and other classifiers to determine if the object matches what it claims to be and also determine the quality of the picture.
-
+  
+## Blockchain
+- The depicted blockchain architecture provides a decentralized platform for photographers to tokenize their work as NFTs. Sellers upload their photos along with descriptions and wallet addresses. The platform employs a machine learning model to verify that the images meet quality and description standards, ensuring authenticity. Approved photos are tokenized through a smart contract, rewarding the seller and listing the NFT for sale. Buyers can then purchase NFTs with transparency, as transactions are securely facilitated and recorded on the blockchain. Upon sale, revenue is distributed, with a percentage going to the seller.
+  
 ## Three main section in our project:
 ### Smart Contract
 - Two smart contracts are needed: the **Seller Contract** enables photographers to upload their work, set prices, and receive revenue, while the **Platform Contract** facilitates transactions by transferring image links and prices between photographers and buyers. Additionally, it ensures transparency and efficiency by verifying photo quality and returning revenue to the seller accordingly.
