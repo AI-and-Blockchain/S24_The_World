@@ -21,10 +21,13 @@ The World is here because every photoshot has a story eager for an audience. We 
 ### Blockchain
 - The blockchain architecture provides a decentralized platform for photographers to tokenize their work as NFTs. Sellers upload their photos along with descriptions and wallet addresses. The platform employs a machine learning model to verify that the images meet quality and description standards, ensuring authenticity. Approved photos are tokenized through a smart contract, rewarding the seller and listing the NFT for sale. Buyers can then purchase NFTs with transparency, as transactions are securely facilitated and recorded on the blockchain. Upon sale, revenue is distributed, with a percentage going to the seller.
 ### Smart Contract
+[Smart Contract README](smart_contract/README.md)
 - Smart contract is needed: **Platform Contract** facilitates transactions by transferring image links and prices between photographers and buyers. What's more, it can send token and recieve token to or from seller and buyer wallet addresses. Additionally, it ensures transparency and efficiency by verifying photo quality and returning revenue to the seller accordingly.
 ### The world website
+[The World Website README](frontend/the-world/README.md)
 - Introducing a revolutionary online platform tailored for seamless transactions between photographers and buyers, integrating effortlessly with buyers' Metamask accounts. Our innovative system incorporates advanced AI technology to streamline the process, automatically extracting photo links and conducting evaluations in real-time. Through this streamlined interface, buyers can swiftly identify and purchase high-quality images that meet their specific needs. Additionally, the platform receives feedback from the AI model to ensure that selected photos meet the buyer's criteria in terms of quality and suitability for their intended use.
 ### AI or Machine learning model
+[AI README](AI/README.md)
 - **Preparing data**:
 Prepare a dataset comprising images paired with clear descriptions or labels. Preprocess the images for algorithm input by resizing, normalization, and applying data augmentation for enhanced diversity. Extract pertinent features from both images and descriptions: leverage Convolutional Neural Networks (CNNs) to extract high-level image features, while employing natural language processing (NLP) techniques to extract textual features.
 - **Implementation**:
