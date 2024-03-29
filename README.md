@@ -46,6 +46,7 @@ sequenceDiagram
     participant contract as Smart Contract
     participant ML as ML model
     actor B as Buyer
+
     S->>W: Upload photo
     S->>contract: Set price
     W->>ML: Extract features
@@ -55,11 +56,12 @@ sequenceDiagram
     else Photo quality is bad
         ML->>W: Return false
         W->>S: Reject photo
+        S->>S: Retake photo
     end
     contract->>W: Display photo
     B->>W: Buy photo
     B->>contract: Sent token
     contract->>W: trade approved
     W->>B: Transfer photo
-    W->>S: Transfer token
+    contract->>S: Transfer token
 ```
