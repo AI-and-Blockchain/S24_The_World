@@ -22,7 +22,18 @@ export default function Home() {
             <button onClick={() => disconnect()}>Disconnect</button>
           </div>
         ) : (
-          <button onClick={() => setOpen(true)}>Connect</button>
+          <button style={{
+            border: 'none',
+            color: 'white',
+            padding: '20px 40px', // Increase padding to make the button larger
+            textAlign: 'center',
+            textDecoration: 'none',
+            display: 'inline-block',
+            fontSize: '16px',
+            margin: '4px 2px',
+            cursor: 'pointer',
+            borderRadius: '12px'
+          }} onClick={() => setOpen(true)}>Connect</button>
         )}
       </div>
     </main>
