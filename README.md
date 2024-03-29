@@ -41,17 +41,25 @@ For classification tasks, start with logistic regression or decision trees for s
 
 ```mermaid
 sequenceDiagram
-    participant Seller
-    participant Platform website for seller
-    participant ML model
-    participant Platform smart contract
-    participant Platform website for buyer
-    participant Buyer
-    Seller->>Platform website for seller: Upload photo
-    Platform website for seller->>ML model: Extract features
-    Seller->>Platform smart contract: Set price
-    Platform smart contract->>Seller: Give a little reward
-    Platform smart contract->>Platform website for buyer: Display photo
-    Buyer->>Platform website for buyer: Buy photo
-    Buyer->>Platform smart contract: Sent token
+    actor S as Seller
+    participant W as Website
+    participant contract as Smart Contract
+    participant ML as ML model
+    actor B as Buyer
+    S->>W: Upload photo
+    S->>contract: Set price
+    W->>ML: Extract features
+    alt Photo quality is good
+        ML->>W: Return true
+        W->>S: Give a little reward
+    else Photo quality is bad
+        ML->>W: Return false
+        W->>S: Reject photo
+    end
+    contract->>W: Display photo
+    B->>W: Buy photo
+    B->>contract: Sent token
+    contract->>W: trade approved
+    W->>B: Transfer photo
+    W->>S: Transfer token
 ```
