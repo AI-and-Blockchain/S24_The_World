@@ -36,6 +36,12 @@ export default function Home() {
           }} onClick={() => setOpen(true)}>Connect</button>
         )}
       </div>
+
+      {/* Link to photographer */}
+      <a href="/photographer">Photographer</a>
+
+      {/* Link to client */}
+      <a href="/client">Client</a>
     </main>
   );
 }
