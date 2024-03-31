@@ -4,6 +4,7 @@ import { useModal } from "connectkit"
 import { useAccount, useDisconnect } from "wagmi"
 import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   const { isConnected, address, isConnecting } = useAccount();
@@ -25,7 +26,7 @@ export default function Home() {
           <button style={{
             border: 'none',
             color: 'white',
-            padding: '20px 40px', // Increase padding to make the button larger
+            padding: '20px 40px',
             textAlign: 'center',
             textDecoration: 'none',
             display: 'inline-block',
@@ -37,11 +38,9 @@ export default function Home() {
         )}
       </div>
 
-      {/* Link to photographer */}
-      <a href="/photographer">Photographer</a>
+      <Link href="/photographer" > Photographer </Link>
 
-      {/* Link to client */}
-      <a href="/client">Client</a>
+      <Link href="client" > Client </Link>
     </main>
   );
 }
