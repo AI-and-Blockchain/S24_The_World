@@ -62,5 +62,5 @@ sequenceDiagram
     B->>contract: Make payment
     contract->>W: trade approved
     W->>B: Transfer photo
-    contract->>S: Transfer token
+    contract->>S: Complete Payment
 ```
