@@ -59,7 +59,7 @@ sequenceDiagram
     end
     W->>B: Display photo
     B->>W: Buy photo
-    B->>contract: Sent token
+    B->>contract: Make payment
     contract->>W: trade approved
     W->>B: Transfer photo
     contract->>S: Transfer token
