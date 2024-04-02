@@ -40,7 +40,7 @@ export default function Home() {
 
       <Link href="/photographer" > Photographer </Link>
 
-      <Link href="client" > Client </Link>
+      <Link href="/client" > Client </Link>
     </main>
   );
 }
