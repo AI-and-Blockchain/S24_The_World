@@ -56,9 +56,8 @@ sequenceDiagram
     else Photo quality is bad
         ML->>W: Return false
         W->>S: Reject photo
-        S->>S: Retake photo
     end
-    contract->>W: Display photo
+    W->>B: Display photo
     B->>W: Buy photo
     B->>contract: Sent token
     contract->>W: trade approved
