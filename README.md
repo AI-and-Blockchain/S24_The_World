@@ -60,6 +60,6 @@ sequenceDiagram
     end
     B->>W: Buy photo
     contract->>contract: trade approved
-    contract->>B: Transfer photo
-    contract->>S: Complete Payment
+    contract->>B: Transfer NFT
+    contract->>S: Transfer 60% of revenue
 ```
