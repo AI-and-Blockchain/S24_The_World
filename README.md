@@ -52,15 +52,14 @@ sequenceDiagram
     W->>ML: Extract features
     alt Photo quality is good
         ML->>W: Return true
+        W->>W: Display photo
         W->>S: Give a little reward
     else Photo quality is bad
         ML->>W: Return false
         W->>S: Reject photo
     end
-    W->>B: Display photo
     B->>W: Buy photo
-    B->>contract: Make payment
-    contract->>W: trade approved
-    W->>B: Transfer photo
+    contract->>contract: trade approved
+    contract->>B: Transfer photo
     contract->>S: Complete Payment
 ```
