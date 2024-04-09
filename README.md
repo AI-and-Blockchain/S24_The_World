@@ -47,16 +47,16 @@ sequenceDiagram
     participant ML as ML model
     actor B as Buyer
 
-    S->>W: Upload photo
+    S->>+W: Upload photo
     S->>contract: Set price
-    W->>ML: Extract features
+    W->>+ML: Extract features
     alt Photo quality is good
         ML->>W: Return true
         W->>W: Display photo
         W->>S: Give a little reward
     else Photo quality is bad
-        ML->>W: Return false
-        W->>S: Reject photo
+        ML->>-W: Return false
+        W->>-S: Reject photo
     end
     B->>W: Buy photo
     contract->>contract: trade approved
