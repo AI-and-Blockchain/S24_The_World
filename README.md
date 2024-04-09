@@ -1,5 +1,15 @@
 # S24_The_World_NFT
 
+
+## Installation
+### Website
+```bash
+make website_dev
+```
+
+### Smart Contract
+### AI
+
 ## What is The World NFT
 
 The World NFT, aims to provide everyone with the opportunity to become a photographer and allow users worldwide to explore, purchase and use their favorite image as an NFT to own it. At the core of the platform is the use of advanced artificial intelligence technology, as well as blockchain-based smart contracts, to ensure that interactions and value exchanges between photographers and buyers are both efficient and secure. More than a simple online photo marketplace, the project represents a new, decentralized art exchange and business model.
