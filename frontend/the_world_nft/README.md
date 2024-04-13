@@ -1,49 +1,45 @@
-# html 文件
+# HTML Files
 
-> 首页
+> Home Page
 >
-> index.html
+> `index.html`
 
-# CSS 文件
+# CSS Files
 
-以组件化开发为主导，页面`CSS`为辅开发
+Primarily component-based development, supplemented by page-specific `CSS`
 
-## CSS 文件说明
+## CSS File Descriptions
 
-> reset.css
+> `reset.css`
 >
-> 更改默认样式及容器样式
+> Modifies default and container styles
 
-> \*.css
+> `*.css`
 >
-> 页面样式
+> Page-specific styles
 
-> components/\*.css
+> `components/*.css`
 >
-> 组件样式
+> Component styles
 
-## 组件
+## Components
 
-> 组件使用说明
+> Instructions for Using Components
 
-在使用到组件的页面添加用例 html 标签，在 css 中导入组件样式即可
+Add example HTML tags on pages where components are used, and import the component styles in CSS as needed.
 
-> 例如在首页需要使用 header 组件
+> For example, to use the header component on the home page:
 >
-> index.css 如下
+> `index.css` as follows
 
 ```css
 @import "./components/header.css";
-```
-
-### 页面 header 组件
-
 ```html
 <header>
   <div class="container header-container">
     <div class="header-left">
       <div class="logo-container">
-        <h1 class="logo-title">NFT 市场</h1>
+        <h1 class="logo-title">NFT Market</h1>
         <img class="logo-image" src="./img/your-logo.png" alt="logo" />
       </div>
 
@@ -61,16 +57,16 @@
             />
           </svg>
         </div>
-        <input type="text" placeholder="搜索" />
+        <input type="text" placeholder="Explore" />
       </div>
     </div>
 
     <nav>
-      <a href="/" class="nav-link">首页</a>
-      <a href="/explore" class="nav-link">发现NFT</a>
-      <a href="/create" class="nav-link">创建NFT</a>
+      <a href="/" class="nav-link">main_page</a>
+      <a href="/Explore" class="nav-link">discover NFT</a>
+      <a href="/create" class="nav-link">create NFT</a>
       <a href="/fnq" class="nav-link">F&Q</a>
-      <a class="nav-link">连接钱包</a>
+      <a class="nav-link">connect wallet</a>
     </nav>
   </div>
 </header>
@@ -82,25 +78,25 @@
 
 ### section 板块组件用例
 
-> 包含 cta 的 section 头部是左右布局
+> The section header containing cta is left and right layout
 
 ```html
 <section class="example-featured section">
   <div class="container">
     <div class="section-header option">
-      <h3 class="section-title">探索</h3>
+      <h3 class="section-title">Explore</h3>
     </div>
   </div>
 </section>
 ```
 
-> 不含 cta 的 section 头部是居中对齐
+> The section header without cta is centered
 
 ```html
 <section class="example-section section">
   <div class="container">
     <div class="section-header ">
-      <h3 class="section-title">探索</h3>
+      <h3 class="section-title">Explore</h3>
     </div>
   </div>
 </section>
@@ -110,9 +106,9 @@
 @import "./components/section.css";
 ```
 
-### avatar 头像组件
+### avatar
 
-> 纯头像
+> Pure avatar
 
 ```html
 <!-- avatar 父元素节点规定头像大小 -->
@@ -123,23 +119,23 @@
 </div>
 ```
 
-> 带有标签的头像，比如状态标记 status 或是排名标记 index
+> Avatar with tags, such as status tag status or ranking tag index
 
 ```css
 @import "./components/avatar.css";
 ```
 
-### gradient-button 渐变按钮
+### gradient-button gradient button
 
 ```html
-<button class=" gradient-button pink-button">连接钱包</button>
+<button class=" gradient-button pink-button">connect wallet</button>
 ```
 
 ```css
 @import "./components/gradient-button.css";
 ```
 
-### NFT 卡片组件
+### NFT card component
 
 ```html
 <li class="trending-cart">
@@ -173,11 +169,11 @@
           </span>
         </div>
       </div>
-      <p class="username">北京东路的日子</p>
+      <p class="username">X_X</p>
     </div>
 
     <div class="price-info">
-      <p>当前价值</p>
+      <p>current value</p>
       <p>
         <span class="eth-icon"
           ><svg
@@ -223,8 +219,4 @@
     </div>
   </div>
 </li>
-```
-
-```css
-@import "./components/trending-card.css";
 ```
