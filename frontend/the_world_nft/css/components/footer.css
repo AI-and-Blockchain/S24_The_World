@@ -1,0 +1,92 @@
+footer {
+  padding: 8rem 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 6rem;
+  margin-bottom: 4rem;
+}
+
+.footer-company {
+  padding-right: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-company h2 {
+  font-size: 2.8rem;
+}
+
+.footer-company p {
+  line-height: 2.4rem;
+}
+
+.footer-logo {
+  height: 3rem;
+}
+
+.footer-logo img {
+  height: 100%;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-nav-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.footer-nav a {
+  color: #333;
+}
+
+.contact-input {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+.contact-button {
+  background-color: #333;
+  height: 38px;
+  aspect-ratio: 1;
+}
+
+.contact-button svg {
+  display: block;
+  margin: auto;
+  fill: white;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-social {
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-button {
+  height: 3.6rem;
+  width: 3.6rem;
+  border-radius: 50%;
+}
+
+.social-button:hover {
+  filter: brightness(80%);
+}
+
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  display: block;
+  margin: auto;
+}

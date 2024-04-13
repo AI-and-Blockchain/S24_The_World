@@ -1,0 +1,28 @@
+.section {
+  padding: 8rem 0;
+}
+
+.section-header {
+  margin-bottom: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 包含 cta 的头部样式 */
+.section-header.option {
+  justify-content: space-between;
+}
+
+.section-title {
+  font-size: 3rem;
+  display: flex;
+  letter-spacing: 0.3rem;
+}
+
+.section-title span {
+  display: flex;
+  margin-left: 2rem;
+  align-items: center;
+  justify-content: center;
+}

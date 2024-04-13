@@ -1,0 +1,277 @@
+/* 通用样式 */
+@import "reset.css";
+
+/* 组件 */
+@import "./components/header.css";
+@import "./components/gradient-button.css";
+@import "./components/trending-card.css";
+@import "./components/avatar.css";
+@import "./components/section.css";
+@import "./components/footer.css";
+@import "./components/modal.css";
+/* section hero */
+.section-hero {
+  padding: 8rem 0;
+  background-color: #fafafa;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.hero-titles {
+  text-transform: uppercase;
+}
+
+.hero-titles p {
+  font-size: 1.4rem;
+}
+
+.hero-titles h2 {
+  margin: 2rem 0 4rem 0;
+  padding: 0 12rem 0 0;
+  font-size: 4rem;
+}
+
+.hero-titles h4 {
+  font-size: 2rem;
+  padding: 0 12rem 0 0;
+  font-weight: normal;
+}
+
+.hero-titles button {
+  margin-top: 6rem;
+  height: 4.4rem;
+  width: 26rem;
+}
+
+.hero-titles button svg {
+  fill: white;
+}
+
+.hero-image-container {
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 2.6rem;
+}
+
+.hero-image-ball {
+  position: absolute;
+}
+
+.hero-image-ball.big {
+  width: 16rem;
+  height: 16rem;
+  transform: translateX(-60%);
+  bottom: 2rem;
+}
+
+.hero-image-ball.small {
+  width: 8rem;
+  height: 8rem;
+  transform: translate(50%, -50%);
+  top: 0;
+  right: 0;
+}
+/* section hero end */
+
+/* trending section start */
+
+.section-nav:link,
+.section-nav:visited {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  color: #6b6b6b;
+}
+
+.section-nav:hover,
+.section-nav:active {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  color: #000;
+}
+
+/* trending list */
+.trending-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  row-gap: 8rem;
+}
+
+/* trending section end */
+
+/* featured section start */
+.featured-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: start;
+  gap: 6rem;
+}
+
+.featured-card {
+  display: flex;
+  gap: 3.2rem;
+  padding: 2rem 3rem 2rem 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 3.598px 43.17px 0px rgba(197, 197, 197, 0.25);
+}
+
+.featured-image {
+  height: 32rem;
+  width: 27rem;
+}
+.featured-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1.4rem;
+}
+
+.featured-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.featured-user {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.featured-user p {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.featured-avatar {
+  height: 4rem;
+  width: 4rem;
+}
+.featured-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.featured-tips {
+  font-size: 1.2rem;
+  color: #6b6b6b;
+}
+
+.featured-desc-detail {
+  margin-top: 1.4rem;
+}
+
+.featured-price-delay {
+  display: flex;
+  justify-content: space-between;
+}
+
+.featured-price,
+.featured-time {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.featured-price p:last-child,
+.featured-time p:last-child {
+  display: flex;
+  font-size: 1.4rem;
+  flex-grow: 1;
+  font-weight: bold;
+  align-items: center;
+}
+
+.featured-button {
+  width: 24rem;
+  height: 4.4rem;
+}
+
+.featured-button svg {
+  fill: white;
+}
+/* featured section end */
+
+/* leader board start */
+.ranking-featured {
+  background-color: #191919;
+  color: white;
+}
+
+.ranking-content {
+  display: grid;
+  grid-template-columns: repeat(5, 16rem);
+  justify-content: space-between;
+}
+
+.ranking-item p {
+  text-align: center;
+}
+
+.ranking-username {
+  padding: 2rem 0 1rem 0;
+}
+
+.ranking-property {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ranking-property .eth-icon svg {
+  fill: white;
+}
+
+/* leader board end */
+
+/* modal start */
+.modal-content {
+  padding: 6rem 4rem;
+  border-radius: 1.4rem;
+  width: fit-content;
+  text-align: center;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
+  background-color: transparent;
+  color: white;
+}
+
+.modal-close:hover {
+  color: black;
+}
+
+.wallet-text h2 {
+  margin-bottom: 1.2rem;
+  font-size: 2.8rem;
+}
+
+.wallet-cta {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.wallet-button {
+  height: 5rem;
+  width: 35rem;
+}
+
+/* modal end */

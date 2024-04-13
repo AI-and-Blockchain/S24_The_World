@@ -1,0 +1,22 @@
+.gradient-button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 1.6rem;
+  border-radius: 1.6rem;
+}
+
+.pink-button {
+  background: linear-gradient(108deg, #ff56bb 6.99%, #ff8f77 119.86%);
+}
+
+.purple-button {
+  background: linear-gradient(108deg, #6e56ff 6.99%, #b073ff 119.86%);
+}
+
+.green-button {
+  background: linear-gradient(108deg, #56c2ff 6.99%, #48fe9c 119.86%);
+}

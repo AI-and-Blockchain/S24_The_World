@@ -1,0 +1,62 @@
+.trending-card {
+  border-radius: 1.2rem;
+  padding: 0.8rem;
+  padding-bottom: 2rem;
+  box-shadow: 0px 4px 40px 0px rgba(197, 197, 197, 0.25);
+}
+
+.card-link {
+  color: #000;
+}
+
+.trending-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.6rem;
+}
+
+.card-title {
+  margin: 1.6rem 0;
+  font-size: 1.8rem;
+}
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-bottom .user-info {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.user-info .username {
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+
+.avatar-container {
+  height: 4rem;
+  width: 4rem;
+}
+
+.card-bottom .price-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-bottom .price-info p {
+  font-size: 1.2rem;
+}
+
+.card-bottom .price-info p:last-child {
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}

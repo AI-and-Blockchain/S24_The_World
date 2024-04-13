@@ -1,0 +1,55 @@
+@import "./reset.css";
+
+@import "./components/header.css";
+@import "./components/footer.css";
+@import "./components/section.css";
+@import "./components/trending-card.css";
+@import "./components/avatar.css";
+@import "./components/slideshow.css";
+@import "./components/select.css";
+
+.section-slideshow {
+  margin-top: 4rem;
+  height: 52rem;
+}
+
+.section-explore {
+  padding: 6rem 0;
+}
+
+.explore-select {
+  width: 20rem;
+  height: 4.4rem;
+  border: 2px solid #585858;
+  border-radius: 2.2rem;
+}
+
+.explore-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+}
+
+.explore-more {
+  margin-top: 4.2rem;
+  text-align: center;
+}
+
+.more-button {
+  height: 4.2rem;
+  text-align: center;
+  line-height: 4.2rem;
+  width: 26rem;
+  margin: 0 auto;
+  background-color: transparent;
+  border: 2px solid #6b6b6b;
+  border-radius: 2.1rem;
+}
+
+.more-button:hover {
+  border: 2px solid #353535;
+}
+
+.more-button:active {
+  border: 2px solid #9c9c9c;
+}

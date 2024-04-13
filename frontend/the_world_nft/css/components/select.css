@@ -1,0 +1,33 @@
+.cus-select {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  border-radius: inherit;
+}
+
+.select-button {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: inherit;
+}
+
+.cus-options {
+  background-color: rgb(255, 255, 255);
+  border-radius: 1.2rem;
+  transform: translateY(2rem);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.cus-option {
+  height: 4.4rem;
+  text-align: center;
+  line-height: 4.4rem;
+  cursor: pointer;
+}
+
+.cus-option:hover {
+  background-color: #eee;
+}

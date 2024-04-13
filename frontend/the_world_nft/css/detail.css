@@ -1,0 +1,101 @@
+@import "./reset.css";
+
+@import "./components/header.css";
+@import "./components/footer.css";
+@import "./components/section.css";
+@import "./components/avatar.css";
+@import "./components/gradient-button.css";
+
+main {
+  background-color: #fafafa;
+}
+.detail-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  padding: 8rem 0;
+  gap: 8rem;
+}
+
+video {
+  width: 100%;
+  height: 52rem;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.detail-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: #6b6b6b;
+}
+.detail-desc h2 {
+  font-size: 2.8rem;
+  color: #333;
+}
+.post-time {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.rocket-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.nft-owner {
+  display: flex;
+  gap: 6rem;
+}
+.owner-info {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.6rem 4rem;
+  margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.avatar-container {
+  height: 4rem;
+  width: 4rem;
+}
+
+.desc-text {
+  font-size: 1.6rem;
+  color: #333;
+  padding-right: 8rem;
+  margin-top: 1.2rem;
+  line-height: 3.2rem;
+}
+
+.detail-price-delay {
+  display: flex;
+  gap: 4rem;
+}
+
+.detail-price,
+.detail-time {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.detail-price p:last-child,
+.detail-time p:last-child {
+  display: flex;
+  font-size: 1.4rem;
+  flex-grow: 1;
+  font-weight: bold;
+  align-items: center;
+}
+
+.detail-button {
+  width: 36rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,128 @@
+@import "./reset.css";
+
+@import "./components/header.css";
+@import "./components/footer.css";
+@import "./components/section.css";
+@import "./components/avatar.css";
+@import "./components/gradient-button.css";
+
+/* about  */
+.about-container {
+  width: 100rem;
+}
+
+.about-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8rem;
+  align-items: center;
+}
+
+.about-item h2 {
+  font-size: 4.8rem;
+  margin-bottom: 3rem;
+}
+
+.about-item p {
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  width: 50rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 1.2rem;
+  object-fit: cover;
+}
+
+.image-rotate {
+  transform: rotateY(180deg) rotate(-45deg);
+}
+
+/* feature */
+.section-feature {
+  padding: 0;
+}
+.feature-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100rem;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.feature-item h4 {
+  font-size: 2.4rem;
+}
+
+.feature-item p {
+  font-size: 1.6rem;
+}
+
+.feature-icon svg {
+  height: 8rem;
+  width: 8rem;
+}
+
+/* feature end */
+
+/* team */
+.team-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.avatar-container {
+  height: 16rem;
+  width: 16rem;
+}
+
+.team-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.team-content h4 {
+  font-size: 2.4rem;
+}
+
+.team-content p {
+  font-size: 1.6rem;
+}
+
+/* team end */
+
+/* join us */
+.join-us {
+  padding: 6rem 20rem;
+  text-align: center;
+  color: white;
+  border-radius: 3rem;
+  background-color: #000;
+}
+
+.join-us h2 {
+  font-size: 3.2rem;
+}
+
+.join-us p {
+  font-size: 1.4rem;
+  margin: 2rem 0;
+}
+
+.join-us-button {
+  margin-top: 4rem;
+  height: 5rem;
+  width: 30rem;
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+/* join us end */

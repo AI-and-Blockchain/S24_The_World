@@ -1,0 +1,45 @@
+.avatar {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.avatar img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* 当头像中含有其他标记性元素时为头像容器添加定位 */
+.avatar.status {
+  position: relative;
+}
+/* 头像标记性元素的定位 */
+.avatar-status {
+  position: absolute;
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  background-color: #007aff;
+  border: 2px solid white;
+  border-radius: 50%;
+  right: 0;
+  top: 0;
+  transform: translate(20%, -20%);
+  box-sizing: border-box;
+}
+/* 头像标记性元素的定位 */
+.avatar-index {
+  position: absolute;
+  width: 2.6rem;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  text-align: center;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: white;
+  color: #191919;
+}
