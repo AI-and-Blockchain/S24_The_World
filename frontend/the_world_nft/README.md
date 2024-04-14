@@ -4,6 +4,10 @@
 >
 > `index.html`
 
+# Build the environment and run the frontend
+> npm install --global http-server
+> http-server
+
 # CSS Files
 
 Primarily component-based development, supplemented by page-specific `CSS`
