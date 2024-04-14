@@ -1,0 +1,3 @@
+*.zkey
+*.wasm
+*_verification_key.json
