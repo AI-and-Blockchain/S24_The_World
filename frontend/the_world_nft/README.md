@@ -6,6 +6,7 @@
 
 # Build the environment and run the frontend
 > npm install --global http-server
+> 
 > http-server
 
 # CSS Files
