@@ -4,7 +4,7 @@
 ## Installation
 ### Website
 ```bash
-make website_dev
+npm run dev
 ```
 
 ### Smart Contract
