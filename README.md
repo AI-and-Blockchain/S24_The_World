@@ -4,7 +4,7 @@
 ## Installation
 ### Website
 ```bash
-npm run dev
+make website_dev
 ```
 
 ### Smart Contract
@@ -26,7 +26,7 @@ The World is here because every photoshot has a story eager for an audience. We 
 
 ### Joe Wang (wangy78)
 - Role: Focused on the AI part, using CNN and other classifiers to determine if the object matches what it claims to be and also determine the quality of the picture.
-  
+
 ## Main sections in our project:
 ### Blockchain
 - The blockchain architecture provides a decentralized platform for photographers to tokenize their work as NFTs. Sellers upload their photos along with descriptions and wallet addresses. The platform employs a machine learning model to verify that the images meet quality and description standards, ensuring authenticity. Approved photos are tokenized through a smart contract, rewarding the seller and listing the NFT for sale. Buyers can then purchase NFTs with transparency, as transactions are securely facilitated and recorded on the blockchain. Upon sale, revenue is distributed, with a percentage going to the seller.
