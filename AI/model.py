@@ -9,6 +9,7 @@ Created on Thu Apr 11 00:52:47 2024
 Skeleton model class. You will have to implement the classification and regression layers, along with the forward definition.
 '''
 
+
 import datasets
 import cv2
 import sys
@@ -16,7 +17,6 @@ import time
 import evaluation
 import torch
 import numpy as np
-
 from torchvision import models
 import matplotlib.pyplot as plt
 import torch.nn as nn
@@ -26,8 +26,6 @@ import torchvision.transforms as transforms
 from torch.utils.data import Dataset, DataLoader, SubsetRandomSampler
 import os
 from PIL import Image
-
-
 transformer = transforms.Compose([transforms.ToTensor(),
                                   transforms.Resize((224, 224)),
                                   transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
@@ -44,13 +42,15 @@ class RCNN(nn.Module):
         self.backbone = nn.Sequential(*list(resnet.children())[:-2])
 
         # TODO: Implement the fully connected layers for classification and regression.
-        self.fc1 = nn.Linear(in_features=2048 * 7 * 7, out_features=num_classes + 1)
-        self.fc2 = nn.Linear(in_features=2048 * 7 * 7, out_features=num_classes * 4)
+        self.fc1 = nn.Linear(in_features=2048 * 7 * 7,
+                             out_features=num_classes + 1)
+        self.fc2 = nn.Linear(in_features=2048 * 7 * 7,
+                             out_features=num_classes * 4)
 
         self.dropout1 = nn.Dropout(p=0.2)
         self.dropout2 = nn.Dropout(p=0.2)
 
-        # Freeze backbone weights. 
+        # Freeze backbone weights.
         for param in self.backbone.parameters():
             param.requires_grad = False
 
@@ -74,7 +74,8 @@ def RUN(model, data_loader, device, optimizer, loss_fn, data_size,
 
     if train or validation:
         # Training or validation phase
-        model.train(train)  # Set the model to training mode if training, else evaluation mode
+        # Set the model to training mode if training, else evaluation mode
+        model.train(train)
 
         loss_sum = 0.0
         accuracy_sum = 0.0
@@ -99,7 +100,8 @@ def RUN(model, data_loader, device, optimizer, loss_fn, data_size,
             # Accumulate loss and accuracy
             loss_sum += loss.item()
             _, prediction = torch.max(outputs, 1)
-            accuracy_sum += torch.sum(prediction == ground_truth_classes).item()
+            accuracy_sum += torch.sum(prediction ==
+                                      ground_truth_classes).item()
 
     elif test:
         # Testing phase
@@ -133,8 +135,6 @@ def RUN(model, data_loader, device, optimizer, loss_fn, data_size,
     return accuracy_sum / data_size, loss_sum / data_size, optimizer
 
 
-
-
 def collate_fn(batch):
     candidate_images, ground_truth_classes = [], []
     # print(f"batch: {batch}")
@@ -150,10 +150,53 @@ def collate_fn(batch):
     return torch.Tensor(candidate_images), torch.LongTensor(ground_truth_classes)
 
 
+def check_file(image_path: str) -> bool:
+    saved_model_path = 'saved_models/best_model.pth'
+
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    checkpoint = torch.load(saved_model_path, map_location=device)
+    model = RCNN(num_classes=_num_classes)
+    model.load_state_dict(checkpoint['state_dict'])
+    model.to(device)
+    model.eval()  # Set the model to evaluation mode
+
+    # Define transformations for preprocessing the input image
+    transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[
+            0.229, 0.224, 0.225]),
+    ])
+
+    # Load and preprocess the input image
+    image = Image.open(image_path)
+    image_tensor = transform(image).unsqueeze(0).to(
+        device)  # Add a batch dimension and move to device
+
+    # Pass the preprocessed image through the model
+    with torch.no_grad():
+        outputs = model(image_tensor)
+
+    # Interpret the model's output
+    predicted_class = torch.argmax(outputs, dim=1).item()
+    print(f'Predicted class: {predicted_class}')
+
+    # If you have a classification label mapping, you can use it to get the class name
+    class_names = ['Class 0', 'Class 1', 'Class 2',
+                   'Class 3']  # Example class names
+    predicted_class_name = class_names[predicted_class]
+
+    print(f'Predicted class name: {predicted_class_name}')
+
+    if (predicted_class_name == "Class 0"):
+        return True
+    else:
+        return False
+
+
 if __name__ == '__main__':
     _num_classes = 4  # 20
-    
-    
+
     if len(sys.argv) == 2:
         saved_model_path = 'saved_models/best_model.pth'
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -162,81 +205,60 @@ if __name__ == '__main__':
         model.load_state_dict(checkpoint['state_dict'])
         model.to(device)
         model.eval()  # Set the model to evaluation mode
-        
+
         # Define transformations for preprocessing the input image
         transform = transforms.Compose([
             transforms.Resize((224, 224)),
             transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-            ])
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[
+                                 0.229, 0.224, 0.225]),
+        ])
 
         image_path = sys.argv[1]
 
         # Load and preprocess the input image
         image = Image.open(image_path)
-        image_tensor = transform(image).unsqueeze(0).to(device)  # Add a batch dimension and move to device
-    
+        image_tensor = transform(image).unsqueeze(0).to(
+            device)  # Add a batch dimension and move to device
+
         # Pass the preprocessed image through the model
         with torch.no_grad():
             outputs = model(image_tensor)
-    
+
         # Interpret the model's output
         predicted_class = torch.argmax(outputs, dim=1).item()
         print(f'Predicted class: {predicted_class}')
-    
+
         # If you have a classification label mapping, you can use it to get the class name
-        class_names = ['Class 0', 'Class 1', 'Class 2', 'Class 3']  # Example class names
+        class_names = ['Class 0', 'Class 1', 'Class 2',
+                       'Class 3']  # Example class names
         predicted_class_name = class_names[predicted_class]
-        
-        
+
         print(f'Predicted class name: {predicted_class_name}')
-        
-        
-        """
-        if(predicted_class_name == "Class 0"):
+
+        if (predicted_class_name == "Class 0"):
             print("yes")
         else:
             print("no")
-        
-        """
         exit(0)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
     device = 'cuda'
 
-    data_train =  datasets.HW5Dataset(data_root='train_s', json_file='train_s.json', candidate_region_size=224)
-    data_test = datasets.HW5DatasetTest(data_root='test_s', json_file='test_s.json', candidate_region_size=224)
-    data_valid = datasets.HW5Dataset(data_root='valid_s', json_file='valid_s.json',candidate_region_size=224)
+    data_train = datasets.HW5Dataset(
+        data_root='train_s', json_file='train_s.json', candidate_region_size=224)
+    data_test = datasets.HW5DatasetTest(
+        data_root='test_s', json_file='test_s.json', candidate_region_size=224)
+    data_valid = datasets.HW5Dataset(
+        data_root='valid_s', json_file='valid_s.json', candidate_region_size=224)
 
-
-
-    
     num_epochs = 3
     mini_batch = 32
 
     # batches using dataloader
-    train_dataloader = DataLoader(data_train, batch_size=mini_batch, shuffle=True)
-    valid_dataloader = DataLoader(data_valid, batch_size=mini_batch, shuffle=True)
+    train_dataloader = DataLoader(
+        data_train, batch_size=mini_batch, shuffle=True)
+    valid_dataloader = DataLoader(
+        data_valid, batch_size=mini_batch, shuffle=True)
     test_dataloader = DataLoader(data_test, batch_size=1, shuffle=True)
     # test_dataloader = DataLoader(data_test, batch_size=1, shuffle=True, collate_fn=collate_fn)
 
@@ -258,7 +280,6 @@ if __name__ == '__main__':
     global_tr_loss = 10.0
     global_tr_acc = 0.0
 
-
     # ------------------------------------------------------------------------------------------------------------------
     print('batch size: %d\n' % mini_batch)
     print(' Epoch     Training accuracy        Training loss       Validation accuracy       Validation loss')
@@ -279,12 +300,10 @@ if __name__ == '__main__':
                                                               validation=True)
         validation_accuracy_list.append(validation_accuracy)
         validation_loss_list.append(validation_loss)
-        
-        
-        
+
         # Define the directory path where you want to save the model
         save_dir = 'saved_models'
-        
+
         # Create the directory if it doesn't exist
         os.makedirs(save_dir, exist_ok=True)
 
@@ -300,7 +319,7 @@ if __name__ == '__main__':
         global_v_acc = validation_accuracy
         global_tr_loss = training_loss
         global_tr_acc = training_accuracy
-            # print status
+        # print status
         print(f'({epoch + 1:02d}/{num_epochs})         {training_accuracy:.4f}                 {training_loss:.4f}  \
                 {validation_accuracy:.4f}                  {validation_loss:.4f}')
 
@@ -317,11 +336,11 @@ if __name__ == '__main__':
                               test=True)
     '''
 
-
     # graph plot
     epoch = [i for i in range(1, num_epochs + 1)]
     plt.figure(0)
-    plt.plot(epoch, validation_loss_list, 'darkslateblue', label='Validation Loss')
+    plt.plot(epoch, validation_loss_list,
+             'darkslateblue', label='Validation Loss')
     plt.plot(epoch, training_loss_list, 'deeppink', label='Training Loss')
     plt.xlabel('Epochs')
     plt.ylabel('Loss')
@@ -331,8 +350,10 @@ if __name__ == '__main__':
 
     epoch = [i for i in range(1, num_epochs + 1)]
     plt.figure(1)
-    plt.plot(epoch, validation_accuracy_list, 'darkslateblue', label='Validation Accuracy')
-    plt.plot(epoch, training_accuracy_list, 'deeppink', label='Training Accuracy')
+    plt.plot(epoch, validation_accuracy_list,
+             'darkslateblue', label='Validation Accuracy')
+    plt.plot(epoch, training_accuracy_list,
+             'deeppink', label='Training Accuracy')
     plt.xlabel('Epochs')
     plt.ylabel('Accuracy')
     plt.title('Training & Validation Accuracy')

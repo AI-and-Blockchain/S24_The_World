@@ -1,18 +1,16 @@
 import os
 import time
 import subprocess
+import sys
+sys.path.insert(1, os.path.abspath(os.path.join(os.getcwd(), '../../AI')))
+# Keep order of imports
 sleep_time = 5
 
 
 def process_file(file_path) -> bool:
-    file_passed = False
-    output = subprocess.run(
-        ['python', '../../AI/model.py', file_path], capture_output=True)
-    output_str = output.stdout.decode('utf-8').strip()
-    if output_str == 'Yes':
-        file_passed = True
-
-    return file_passed
+    from model import check_file
+    # return True
+    return check_file(file_path)
 
 
 def upload_to_ipfs(file_path) -> str:
