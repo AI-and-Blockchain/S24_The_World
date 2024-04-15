@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 contract NFTMarketplace is ERC721URIStorage {
     uint256 private _nextTokenId = 1; // Initialize the next token ID to 1, replacing the Counters
     address payable platformOwner; // Owner of the platform 
-    uint reward = 0.001 ether; // Set a reward value for token listing
+    uint reward = 0.0001 ether; // Set a reward value for token listing
 
     // Struct for a token listed on the marketplace
     struct ListedToken {
@@ -32,7 +32,7 @@ contract NFTMarketplace is ERC721URIStorage {
     );
 
     // Constructor to set the platform owner and initialize the ERC721 token with a name and symbol
-    constructor() ERC721("MarketplaceNFT", "MPNFT") {
+    constructor() ERC721("MarketplaceNFT", "MPNFT") payable {
         platformOwner = payable(msg.sender); // Set the platform owner to the contract deployer
     }
 
