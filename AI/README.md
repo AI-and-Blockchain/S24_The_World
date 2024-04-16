@@ -17,13 +17,13 @@ To set up and train the model, follow these steps:
 2. **Training the Model**:
    Run the following command:
    python3 model.py
-   ![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/sample.png)
+   ![image](../Image/sample.png)
 
 You can change the dataset path in the script to train on different datasets.
 
 ## Evaluation
 To evaluate the model, you need to provide an image file (e.g., '30.png').
-Run the following command: 
+Run the following command:
    python3 model.py "name of a photo".png
 
 ## Configuration Options
