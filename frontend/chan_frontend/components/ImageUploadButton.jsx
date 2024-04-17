@@ -24,12 +24,12 @@ function ImageUploadButton() {
 
     setUploadStatus('uploading...');
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/upload-image', {
+      let response = await fetch('http://127.0.0.1:5000/api/upload-image', {
         method: 'POST',
         body: formData,
       });
 
-      const result = await response.json();
+      let result = await response.json();
       if (response.ok) {
         setImageUrl(result.url);
         setUploadStatus('upload suceess!');

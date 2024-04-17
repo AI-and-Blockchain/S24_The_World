@@ -20,6 +20,7 @@ def upload_image():
     if file:
         filename = secure_filename(file.filename)
         file.save(os.path.join('uploads', filename))
+
         File_saved, ret_link = check_files.main(
             os.path.join(os.getcwd(), 'uploads'))
         # return jsonify({'url': '/uploads/' + filename}), 200
