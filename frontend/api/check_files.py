@@ -8,8 +8,6 @@ sleep_time = 5
 
 
 def process_file(file_path) -> bool:
-    return True
-    # Fake return value for testing
     from model import check_file
     return check_file(file_path)
 
@@ -32,9 +30,8 @@ def main(path):
     # while True:
     files = os.listdir(path)
     for file in files:
-        # if file.endswith('.jpg') or file.endswith('.png'):
-        file_passed = process_file(os.path.join(path, file))
-        # file_passed = True
+        # file_passed = process_file(os.path.join(path, file))
+        file_passed = True
         if file_passed:
             print(f"File {file} passed")
             os.rename(os.path.join(path, file),
