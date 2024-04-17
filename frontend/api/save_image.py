@@ -31,6 +31,5 @@ def upload_image():
     return jsonify({'message': 'Something went wrong'}), 500
 
 
-@app.route('/uploads/<filename>')
 if __name__ == '__main__':
     app.run(debug=True)

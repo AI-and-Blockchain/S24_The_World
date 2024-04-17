@@ -38,7 +38,6 @@ def main(path):
                 ipfs_code = upload_to_ipfs(os.path.join('display', file))
                 print(f"IPFS link: ipfs.io/ipfs/{ipfs_code}")
                 return (True, f"ipfs.io/ipfs/{ipfs_code}")
-                # TODO: Send the IPFS link to the backend
             else:
                 print(f"File {file} failed")
                 os.remove(os.path.join(path, file))
