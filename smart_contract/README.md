@@ -1,2 +1,0 @@
-# Smart Contract
-- Two smart contracts are needed: the **Seller Contract** enables photographers to upload their work, set prices, and receive revenue, while the **Platform Contract** facilitates transactions by transferring image links and prices between photographers and buyers. Additionally, it ensures transparency and efficiency by verifying photo quality and returning revenue to the seller accordingly.
