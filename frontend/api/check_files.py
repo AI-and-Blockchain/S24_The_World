@@ -15,8 +15,6 @@ def process_file(file_path) -> bool:
 def upload_to_ipfs(file_path) -> str:
     # Use subprocess to run the ipfs command
     # Get the output of the command
-    return "AAAAA"
-    # Fake return value for testing
 
     output = subprocess.run(['ipfs', 'add', file_path], capture_output=True)
     # Get the output string
@@ -30,8 +28,7 @@ def main(path):
     # while True:
     files = os.listdir(path)
     for file in files:
-        # file_passed = process_file(os.path.join(path, file))
-        file_passed = True
+        file_passed = process_file(os.path.join(path, file))
         if file_passed:
             print(f"File {file} passed")
             os.rename(os.path.join(path, file),
@@ -43,9 +40,6 @@ def main(path):
             print(f"File {file} failed")
             os.remove(os.path.join(path, file))
             return (False, "File failed")
-
-        # time.sleep(sleep_time)
-    pass
 
 
 if __name__ == "__main__":
