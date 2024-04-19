@@ -59,18 +59,6 @@ This model leverages a modified ResNet50 backbone, optimized for both classifica
 - **Classification Layer:** A fully connected layer (`fc1`) with `num_classes + 1` output neurons. This includes neurons for each object class and an additional neuron for the "nothing" class.
 - **Regression Layer:** A fully connected layer (`fc2`) with `num_classes * 4` output neurons. Each class has four neurons representing the coordinates of bounding boxes (upper left and lower right corners).
 
-### Training Loop
-The training process includes:
-
-- Iteratively processing the training data to compute outputs.
-- Calculating classification and regression losses.
-- Updating model parameters using stochastic gradient descent.
-- Regular evaluation on the validation set to monitor performance and mitigate overfitting.
-- Saving the best model based on validation loss and accuracy metrics.
-
-### Testing
-Post-training, the model is assessed on a test set to evaluate its performance on unseen data.
-
 ### Data Loading and Preprocessing
 - **Data Handling:** Custom datasets and `DataLoader` for managing training, validation, and test datasets.
 - **Preprocessing:** Data augmentation and preprocessing steps include resizing and normalization, implemented via `torchvision` transforms.
@@ -80,12 +68,6 @@ Post-training, the model is assessed on a test set to evaluate its performance o
 - **Loss Functions:**
   - Cross-entropy loss for classification.
   - Mean Squared Error (MSE) loss for bounding box regression.
-
-### Model Saving and Loading
-The best-performing model, based on validation metrics, is saved for later use.
-
-### Visualization
-Training and validation loss and accuracy curves are visualized and saved as images for further analysis.
 
 # Architecture / High-level component diagram
 ![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/architecture_component.png)
