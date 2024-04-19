@@ -4,6 +4,10 @@
 ## Installation
 ### Website( please run AI first!!!)
 ```bash
+# run api for connecting ai and website
+cd frontend\api
+python save_image.py
+# run AI
 cd frontend\chan_frontend
 npm run dev
 ```
@@ -11,13 +15,6 @@ npm run dev
 ### Smart Contract
 ```bash
 You don't need to deploy the smart contract!
-```
-### AI
-
-go to the frontend\api folder and run the following command first
-```bash
-cd frontend\api
-python save_image.py
 ```
 
 
