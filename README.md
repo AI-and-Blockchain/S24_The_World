@@ -4,14 +4,17 @@
 ## Installation
 ### Website
 ```bash
-npm install
 # We assume you have IPFS in your system, if not plese download it first!
+# start ipfs daemon to connect to the network
 ipfs daemon
+
 # run api for connecting ai and website
 cd frontend\api
 python save_image.py
-# run AI
+
+# To deploy the website
 cd frontend\chan_frontend
+npm install
 npm run dev
 ```
 
