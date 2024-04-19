@@ -8,7 +8,15 @@ make website_dev
 ```
 
 ### Smart Contract
+
 ### AI
+
+go to the frontend\api folder and run the following command
+```bash
+cd frontend\api
+python save_image.py
+```
+
 
 # What is The World NFT
 
