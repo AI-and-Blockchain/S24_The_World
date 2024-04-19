@@ -4,14 +4,17 @@
 ## Installation
 ### Website
 ```bash
-make website_dev
+cd frontend\chan_frontend
+npm run dev
 ```
 
 ### Smart Contract
-
+```bash
+You don't need to deploy the smart contract!
+```
 ### AI
 
-go to the frontend\api folder and run the following command
+go to the frontend\api folder and run the following command first
 ```bash
 cd frontend\api
 python save_image.py
