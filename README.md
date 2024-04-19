@@ -2,8 +2,9 @@
 
 
 ## Installation
-### Website( please run AI first!!!)
+### Website
 ```bash
+npm install
 # run api for connecting ai and website
 cd frontend\api
 python save_image.py
