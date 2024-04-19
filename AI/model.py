@@ -151,7 +151,8 @@ def collate_fn(batch):
 
 
 def check_file(image_path: str) -> bool:
-    saved_model_path = 'saved_models/best_model.pth'
+    _num_classes = 4
+    saved_model_path = '../../AI/saved_models/best_model.pth'
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     checkpoint = torch.load(saved_model_path, map_location=device)
@@ -183,12 +184,20 @@ def check_file(image_path: str) -> bool:
 
     # If you have a classification label mapping, you can use it to get the class name
     class_names = ['Class 0', 'Class 1', 'Class 2',
-                   'Class 3']  # Example class names
+                   'Class 3','Class 4']  # Example class names
     predicted_class_name = class_names[predicted_class]
 
     print(f'Predicted class name: {predicted_class_name}')
 
     if (predicted_class_name == "Class 0"):
+        return True
+    elif(predicted_class_name == "Class 1"):
+        return True
+    elif(predicted_class_name == "Class 2"):
+        return True
+    elif(predicted_class_name == "Class 3"):
+        return True
+    elif(predicted_class_name == "Class 4"):
         return True
     else:
         return False

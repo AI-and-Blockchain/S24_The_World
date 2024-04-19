@@ -99,4 +99,44 @@ contract NFTMarketplace is ERC721URIStorage {
     function getSellerListedTokensCount(address seller) public view returns (uint256) {
         return sellerListedTokens[seller];
     }
+
+    // Function to change the price of a listed token
+    function changeTokenPrice(uint256 tokenId, uint256 newPrice) public {
+        // Retrieve the token's details from the mapping
+        ListedToken storage token = idToListedToken[tokenId];
+
+        // Ensure only the owner can change the price
+        require(msg.sender == token.owner, "Only the token owner can change the price.");
+
+        // Ensure the token is currently listed
+        require(token.isListed, "Token must be listed to change the price.");
+
+        // Update the token price
+        token.price = newPrice;
+
+        // Emit an event for changing the token price
+        emit TokenListed(tokenId, msg.sender, newPrice, true);
+    }
+
+    // Function to remove a token from the marketplace
+    function removeToken(uint256 tokenId) public {
+        // Retrieve the token's details from the mapping
+        ListedToken storage token = idToListedToken[tokenId];
+
+        // Ensure only the owner can remove the token
+        require(msg.sender == token.owner, "Only the token owner can remove the token.");
+
+        // Ensure the token is currently listed
+        require(token.isListed, "Token must be listed to be removed.");
+
+        // Mark the token as not listed
+        token.isListed = false;
+
+        // Decrement the count of tokens the seller has listed for sale
+        sellerListedTokens[msg.sender] -= 1;
+
+        // Emit an event for the token removal
+        emit TokenListed(tokenId, msg.sender, token.price, false);
+
+    }
 }

@@ -41,8 +41,7 @@ function ImageUploadButton() {
     catch (error) {
       console.error("upload error:");
       console.error(error);
-      // setUploadStatus(`upload error: ${error.message}`);
-      setUploadStatus('upload suceess!');
+      setUploadStatus(`upload error: ${error.message}`);
     }
   };
 

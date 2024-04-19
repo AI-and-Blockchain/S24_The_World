@@ -10,7 +10,7 @@ function BuyToken() {
     const [pay, setPay] = useState('');
 
     const {config} = usePrepareContractWrite({
-        address: "0xdE7508cB791ae50EaD175A62bCCDeE54deB94154",
+        address: "0x3A991f48D5c95AA958A22800B25B2Cd29960435A",
         abi: platformABI.abi,
         functionName: 'buyToken',
         args: [tokenId],

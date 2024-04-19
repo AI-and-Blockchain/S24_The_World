@@ -7,6 +7,8 @@ import SwitchNetwork from '@/components/SwitchNetwork';
 import ImageUploadButton from '@/components/ImageUploadButton';
 import SetNFTPrice from '@/components/SetNFTPrice';
 import BuyToken from '@/components/BuyToken';
+import ChangeTokenPrice from '@/components/ChangeTokenPrice';
+import RemoveToken from '@/components/RemoveToken';
 
 export default function Home() {
   const { address } = useAccount();
@@ -36,6 +38,8 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-2 m-2">
                 <ImageUploadButton/>
                 <SetNFTPrice/>
+                <ChangeTokenPrice/>
+                <RemoveToken/>
               </div>
             </div>
             <div className="flex flex-col">

@@ -1,2 +1,0 @@
-# Smart Contract
-- the **Platform Contract** facilitates transactions by transferring image links and prices between photographers and buyers. Additionally, it ensures transparency and efficiency by verifying photo quality and returning revenue to the seller accordingly.

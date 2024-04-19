@@ -1,8 +1,12 @@
 from flask import Flask, request, jsonify
 import os
 from werkzeug.utils import secure_filename
+from flask_cors import CORS
+import check_files
 
 app = Flask(__name__)
+CORS(app)
+
 
 @app.route('/api/upload-image', methods=['POST'])
 def upload_image():
@@ -18,9 +22,17 @@ def upload_image():
     if file:
         filename = secure_filename(file.filename)
         file.save(os.path.join('uploads', filename))
-        return jsonify({'url': '/uploads/' + filename}), 200
+
+        File_saved, ret_link = check_files.main(
+            os.path.join(os.getcwd(), 'uploads'))
+        # return jsonify({'url': '/uploads/' + filename}), 200
+        if File_saved:
+            return jsonify({'url': ret_link}), 200
+        else:
+            return jsonify({'message': 'Something went wrong'}), 500
 
     return jsonify({'message': 'Something went wrong'}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True)
