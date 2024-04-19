@@ -21,7 +21,7 @@ To set up and train the model, follow these steps:
    ```
 
    After training, the directory will look like this:
-   ![image](../Image/sample.png)
+   ![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/sample.png)
 
 You can change the dataset path in the script to train on different datasets.
 
