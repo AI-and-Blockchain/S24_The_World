@@ -5,6 +5,8 @@
 ### Website
 ```bash
 npm install
+# We assume you have IPFS in your system, if not plese download it first!
+ipfs daemon
 # run api for connecting ai and website
 cd frontend\api
 python save_image.py
