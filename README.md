@@ -1,6 +1,30 @@
 # S24_The_World_NFT
 
-## What is The World NFT
+
+## Installation
+### Website
+```bash
+# We assume you have IPFS in your system, if not plese download it first!
+# start ipfs daemon to connect to the network
+ipfs daemon
+
+# run api for connecting ai and website
+cd frontend\api
+python save_image.py
+
+# To deploy the website
+cd frontend\chan_frontend
+npm install
+npm run dev
+```
+
+### Smart Contract
+```bash
+You don't need to deploy the smart contract!
+```
+
+
+# What is The World NFT
 
 The World NFT, aims to provide everyone with the opportunity to become a photographer and allow users worldwide to explore, purchase and use their favorite image as an NFT to own it. At the core of the platform is the use of advanced artificial intelligence technology, as well as blockchain-based smart contracts, to ensure that interactions and value exchanges between photographers and buyers are both efficient and secure. More than a simple online photo marketplace, the project represents a new, decentralized art exchange and business model.
 
@@ -16,27 +40,39 @@ The World is here because every photoshot has a story eager for an audience. We 
 
 ### Joe Wang (wangy78)
 - Role: Focused on the AI part, using CNN and other classifiers to determine if the object matches what it claims to be and also determine the quality of the picture.
-  
-## Main sections in our project:
-### Blockchain
-- The blockchain architecture provides a decentralized platform for photographers to tokenize their work as NFTs. Sellers upload their photos along with descriptions and wallet addresses. The platform employs a machine learning model to verify that the images meet quality and description standards, ensuring authenticity. Approved photos are tokenized through a smart contract, rewarding the seller and listing the NFT for sale. Buyers can then purchase NFTs with transparency, as transactions are securely facilitated and recorded on the blockchain. Upon sale, revenue is distributed, with a percentage going to the seller.
-### Smart Contract
-[Smart Contract README](smart_contract/README.md)
-- Smart contract is needed: **Platform Contract** facilitates transactions by transferring image links and prices between photographers and buyers. What's more, it can send token and recieve token to or from seller and buyer wallet addresses. Additionally, it ensures transparency and efficiency by verifying photo quality and returning revenue to the seller accordingly.
-### The world website
-[The World Website README](frontend/the-world/README.md)
-- Introducing a revolutionary online platform tailored for seamless transactions between photographers and buyers, integrating effortlessly with buyers' Metamask accounts. Our innovative system incorporates advanced AI technology to streamline the process, automatically extracting photo links and conducting evaluations in real-time. Through this streamlined interface, buyers can swiftly identify and purchase high-quality images that meet their specific needs. Additionally, the platform receives feedback from the AI model to ensure that selected photos meet the buyer's criteria in terms of quality and suitability for their intended use.
-### AI or Machine learning model
-[AI README](AI/README.md)
-- **Preparing data**:
-Prepare a dataset comprising images paired with clear descriptions or labels. Preprocess the images for algorithm input by resizing, normalization, and applying data augmentation for enhanced diversity. Extract pertinent features from both images and descriptions: leverage Convolutional Neural Networks (CNNs) to extract high-level image features, while employing natural language processing (NLP) techniques to extract textual features.
-- **Implementation**:
-For classification tasks, start with logistic regression or decision trees for simplicity. Transition to KNN for more complexity. For advanced tasks, utilize PyTorch to implement a neural network with CNN layers for image classification. Split data into train, validation, and test sets. Employ cross-entropy loss and Adam optimizer for training. Evaluate models individually and ensemble results using techniques like voting or averaging. Assess performance using metrics like accuracy, precision, recall, and F1-score. Mainly using scikit-learn and PyTorch libraries for implementation.
 
-## Architecture / High-level component diagram
+# Main sections in our project:
+## Blockchain
+- The blockchain architecture provides a decentralized platform for photographers to tokenize their work as NFTs. Sellers upload their photos along with descriptions and wallet addresses. The platform employs a machine learning model to verify that the images meet quality and description standards, ensuring authenticity. Approved photos are tokenized through a smart contract, rewarding the seller and listing the NFT for sale. Buyers can then purchase NFTs with transparency, as transactions are securely facilitated and recorded on the blockchain. Upon sale, revenue is distributed, with a percentage going to the seller.
+## Smart Contract
+<!-- [Smart Contract README](smart_contract/README.md) -->
+- Smart contract is needed: **Platform Contract** facilitates transactions by transferring image links and prices between photographers and buyers. What's more, it can send token and recieve token to or from seller and buyer wallet addresses. Additionally, it ensures transparency and efficiency by verifying photo quality and returning revenue to the seller accordingly.
+## The world website
+<!-- [The World Website README](frontend/the-world/README.md) -->
+- Introducing a revolutionary online platform tailored for seamless transactions between photographers and buyers, integrating effortlessly with buyers' Metamask accounts. Our innovative system incorporates advanced AI technology to streamline the process, automatically extracting photo links and conducting evaluations in real-time. Through this streamlined interface, buyers can swiftly identify and purchase high-quality images that meet their specific needs. Additionally, the platform receives feedback from the AI model to ensure that selected photos meet the buyer's criteria in terms of quality and suitability for their intended use.
+## AI Model Architecture and Training Guide
+[AI README](AI/README.md)
+### Model Architecture
+This model leverages a modified ResNet50 backbone, optimized for both classification and bounding box regression tasks in object detection:
+
+- **Backbone Network:** ResNet50 without the last two layers, ending at the global average pooling layer.
+- **Classification Layer:** A fully connected layer (`fc1`) with `num_classes + 1` output neurons. This includes neurons for each object class and an additional neuron for the "nothing" class.
+- **Regression Layer:** A fully connected layer (`fc2`) with `num_classes * 4` output neurons. Each class has four neurons representing the coordinates of bounding boxes (upper left and lower right corners).
+
+### Data Loading and Preprocessing
+- **Data Handling:** Custom datasets and `DataLoader` for managing training, validation, and test datasets.
+- **Preprocessing:** Data augmentation and preprocessing steps include resizing and normalization, implemented via `torchvision` transforms.
+
+### Optimizer and Loss Function
+- **Optimizer:** Adam with a learning rate of `1e-3` and weight decay of `1e-5`.
+- **Loss Functions:**
+  - Cross-entropy loss for classification.
+  - Mean Squared Error (MSE) loss for bounding box regression.
+
+# Architecture / High-level component diagram
 ![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/architecture_component.png)
 
-## Sequence Diagram
+# Sequence Diagram
 <!-- ![alt text](https://github.com/AI-and-Blockchain/S24_The_World/blob/main/Image/sequence_diagram.png) -->
 
 ```mermaid
