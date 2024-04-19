@@ -2,7 +2,7 @@
 
 
 ## Installation
-### Website
+### Website( please run AI first!!!)
 ```bash
 cd frontend\chan_frontend
 npm run dev
